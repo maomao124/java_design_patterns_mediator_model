@@ -13,6 +13,7 @@ package mao.t2;
  * Description(描述)： 无
  */
 
+
 public class Student
 {
     //名字
@@ -20,6 +21,12 @@ public class Student
     //性别。性别应该要定义一个枚举
     private final String sex;
 
+    /**
+     * Instantiates a new Student.
+     *
+     * @param name the name
+     * @param sex  the sex
+     */
     public Student(String name, String sex)
     {
         this.name = name;
@@ -27,26 +34,51 @@ public class Student
         Mediator.add(this);
     }
 
+    /**
+     * Gets sex.
+     *
+     * @return the sex
+     */
     public String getSex()
     {
         return sex;
     }
 
+    /**
+     * Gets name.
+     *
+     * @return the name
+     */
     public String getName()
     {
         return name;
     }
 
+    /**
+     * Send message to all.
+     *
+     * @param message the message
+     */
     public void sendMessageToAll(String message)
     {
         Mediator.sendMessageToAll(this, message);
     }
 
+    /**
+     * Send message to same sex.
+     *
+     * @param message the message
+     */
     public void sendMessageToSameSex(String message)
     {
         Mediator.sendMessageToSameSex(this, message);
     }
 
+    /**
+     * Receive message.
+     *
+     * @param message the message
+     */
     public void receiveMessage(String message)
     {
         System.out.println(name + "收到了消息。" + message);
